@@ -1,0 +1,99 @@
+body {
+    background-color: rgb(149, 124, 151);
+}
+
+header{
+    background-color: rgb(127, 18, 120);
+    text-align: center;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+nav ul li{
+    margin: 0 15px;
+    border: solid;
+    padding: 5px;
+    background-color: rgb(147, 39, 172);
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:black;
+}
+
+h1{
+    color: rgb(0, 0, 0);
+}
+
+body {
+    font-family: Ari
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bolo de Chocolate</title> 
+        <link rel="stylesheet" type="text/css" href="../CSS/estilo.css">   
+    </head>
+    <body>
+        <header><h1>Bolo de Chocolate</h1></header>
+        
+        
+        <nav> 
+            <ul>
+                <li><a href="#ingredientes">Ingredientes</a></li>
+                <li><a href="#preparo">Modo de Preparo</a></li>
+                <li><a href="#imagem">Imagem do Bolo</a></li>
+            </ul>
+        </nav>
+        
+
+
+    <section id="ingredientes">
+        <h2>Ingredientes</h2>
+        <ul>
+            <li>2 xícara de farinha de trigo</li> 
+            <li>1 xícara de açúcar</li>
+            <li>1 xícara de leite</li>
+            <li>3 ovos</li>
+            <li>1 xícara de chocolate em pó</li>
+            <li>1 colher de sopa de fermento em pó</li>
+        </ul>
+    </section>
+        
+
+    <section id="preparo"></section>
+        <h2><section>Modo de preparo</section></h2>
+        <ol>
+            <li>Preaqueça o forno a 180°C.</li>
+            <li>Em uma tigela, misture a farinha, o açucar e o chocolate em pó.</li>
+            <li>Adicione o leite e os ovos, misture bem.</li>
+            <li>Por último adicione o fermento e misture delicadamente.</li>
+            <li>Despeje a massa em uma forma untada e leve ao forno por aproximadamente 40 minutos</li>
+        </ol>
+    </section>
+
+
+
+    <section id="imagem">
+        <h2>Imagem do bolo</h2>
+        <img src="https://www.estadao.com.br/resizer/v2/FIVYQFU6J5ND3PYRA6XQHR4NW4.jpg?quality=80&auth=04a93b8f4c288302da64fd8a96da7bb7cc11dff70430e4ba66587218d5b6011f&width=720&height=503&focal=0,0" alt="Bolo de Chocolate"/>
+        <p></p>
+    </section>
+
+        <a href="https://www.google.com/search?q=tudo+gostoso&rlz=1C1FCXM_pt-PTBR987BR1014&oq=tudo+gostoso&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiPAjIHCAIQABiPAtIBCDM2NTRqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8">Veja mais receitas</a>
+        <p></p>
+    </body>
+</html>
+
+
+
