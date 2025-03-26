@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bolo de Chocolate</title> 
+        <link rel="stylesheet" type="text/css" href="../CSS/estilo.css">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    </head>
+    <body>
+        <h2>Comparação de computador: AVELL B.On 145 / DELL Inspiron </h2>
+
+        <table class="center">
+            <tr>
+                <th>Características</th>
+                <th><img src="https://quenotebookcomprar.com.br/wp-content/webp-express/webp-images/uploads/2024/07/Notebook-Avell-B-On-145-B-On-147-Cinza.jpg.webp"/></th>
+                <th><img src="https://quenotebookcomprar.com.br/wp-content/webp-express/webp-images/uploads/2023/10/Notebook-Dell-Inspiron-i15-i120K-Preto.jpg.webp"/></th>
+            </tr>
+
+            <tr>
+                <td>Cor</td>
+                <td>Cinza</td>
+                <td>Preto</td>
+            </tr>
+
+            <tr>
+                <td>Categoria</td>
+                <td>Intermediária</td>
+                <td>Intermediária</td>
+            </tr>
+
+            <tr>
+                <td>Processador</td>
+                <td>Intel Core i5-1235U</td>
+                <td>Intel Core i5-1235U</td>
+            </tr>
+
+            <tr>
+                <td>SSD</td>
+                <td>SSD de 256 GB</td>
+                <td>SSD de 512 GB</td>
+            </tr>
+
+            <tr>
+                <td>Tela / painel</td>
+                <td>LED 14,0" pol.WUXGA (1920 x 1200 px)</td>
+                <td>LED 15,6" pol.Full HD (1920 x 1080 px)</td>
+            </tr>
+
+            <tr>
+                <td>Categoria</td>
+                <td>Intermediária</td>
+                <td>Intermediária</td>
+            </tr>
+
+            <tr>
+                <td>Sistema Operacional</td>
+                <td><i class="fa fa-remove"></td>
+                <td><i class="fa fa-check"></td>
+            </tr>
+
+            <tr>
+                <td>RAM 8 GB</td>
+                <td><i class="fa fa-check"></td>
+                <td><i class="fa fa-check"></td>
+            </tr>
+        </table>
+    </body>
+
+
+tr:nth-child(even){
+    background-color: rgb(125, 70, 136);
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+td {
+    text-align: center;
+}
+
+table, td{
+    border-inline-end: solid;
+}
