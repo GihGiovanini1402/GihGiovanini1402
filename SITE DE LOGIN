@@ -1,0 +1,45 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bolo de Chocolate</title> 
+        <link rel="stylesheet" type="text/css" href="../CSS/estilo.css">  
+    </head>
+    
+    <body>
+        <form>
+            <table class="center">
+                <fieldset>
+                <legend>Dados Pessoais:</legend>
+                <label>Nome:<input type="text" name="nome"/></label>
+
+                <p></p>
+
+                <label>Sexo: <input type="radio" name="sex" value="masculino" /> Masculino<br/></label>
+                <label>Sexo: <input type="radio" name="sex" value="feminino" /> Feminino</label>
+
+                <p></p>
+
+                <label>profissao: <SELECT name="profissao">
+                    <option value="estudante">Estudante</option>
+                    <option value="professor">Professor</option>
+                    <option value="engenheiro">Engenheiro</option>
+                    <option value="economista">Economista</option>
+                    <option value="medico">Médico</option>
+                    </SELECT>
+                </label>
+                
+                <label> Comentários: 
+                    <TEXTAREA rows="3" cols="50" name="observacoes"
+                        placeholder="digite aqui suas observações">
+                    </TEXTAREA>
+                </label>
+
+                <input type="submit" value="Envia" >
+                <input type="reset" value="Limpa" >
+
+                </fieldset>
+                </table>
+        </form>
+    </body>
+</html>
