@@ -1,0 +1,95 @@
+drop database IF EXISTS  MinhaCaixa;
+CREATE DATABASE MinhaCaixa;
+use MinhaCaixa;
+
+CREATE TABLE Clientes (
+  ClienteCodigo int PRIMARY KEY,
+  ClienteNome varchar(20) not null,
+  ClienteCPF varchar(11) not null ,
+  PessoaGenero CHAR(2),
+  ClienteEmail varchar(100),
+  ClienteNascimento date
+);
+
+CREATE TABLE Contas   (
+  AgenciaCodigo int,
+  ContaNumero VARCHAR (10) PRIMARY KEY,
+  ClienteCodigo int,
+  ContaSaldo decimal (10,2),
+  ContaAbertura datetime,
+  CONSTRAINT FK_CLIENTES_CONTAS FOREIGN KEY (ClienteCodigo) REFERENCES Clientes(ClienteCodigo)
+  );
+  
+  CREATE TABLE Cartoes (
+  ContaNumero VARCHAR (10), 
+  CartaoCodigo varchar (20) primary key, 
+  CartaoLimite decimal (10,2),
+  CartaoExpira date,
+  CartaoCodigoSeguranca smallint,
+  CONSTRAINT FK_Cartao2 FOREIGN KEY (ContaNumero) REFERENCES Contas(ContaNumero)
+  );
+    
+INSERT INTO Clientes (ClienteCodigo, ClienteNome,ClienteCPF, PessoaGenero, ClienteEmail, ClienteNascimento) VALUES (1, 'Benedito dos Santos','12345678911','M','benesantos1995@outlook.com','1976-03-05');
+INSERT INTO Clientes (ClienteCodigo, ClienteNome,ClienteCPF, PessoaGenero, ClienteEmail, ClienteNascimento) VALUES (2, 'Rubens Fonseca','45678911123','','RF2456@gmail.com','1966-01-15');
+INSERT INTO Clientes (ClienteCodigo, ClienteNome,ClienteCPF, PessoaGenero, ClienteEmail, ClienteNascimento) VALUES (3, 'Maria Joana Ribeiro','12678911543','F','mjr2@uol.com.br','2003-09-25');
+INSERT INTO Clientes (ClienteCodigo, ClienteNome,ClienteCPF, PessoaGenero, ClienteEmail, ClienteNascimento) VALUES (4, 'Rita Reis','12345672912','',null,'1999-12-01');
+INSERT INTO Clientes (ClienteCodigo, ClienteNome,ClienteCPF, PessoaGenero, ClienteEmail, ClienteNascimento) VALUES (5, 'Aparecida da Silva','11122233344','F','as@gmail.com','2004-01-01');
+
+
+INSERT INTO contas values 
+(12345,'76765-2', 5, 2500.00 , '2017-08-15'),
+(12345,'12123-4', 4, 500.00  , '2010-07-01'),
+(12345,'55566-7', 3, 32500.45, '2000-05-31'),
+(12345,'98765-2', 2, 5100.00 , '1995-05-30'),
+(12345,'75654-1', 1, 3500.50 , '1993-01-05');
+
+   
+INSERT into Cartoes   (ContaNumero , CartaoCodigo        , CartaoLimite, CartaoExpira, CartaoCodigoSeguranca) 
+  VALUES         ('75654-1'   ,'001-2002-3003-4004' , 3500.00      ,'2025-10-31'  , 123  ),
+                 ('98765-2'   ,'1221-2222-3223-4224', 7500.00      ,'2024-03-31'  , 456  ),
+                 ('55566-7'   ,'1331-2332-3333-4334', 1500.00      ,'2024-09-30'  , 789  ),
+                 ('12123-4'   ,'1441-2442-3443-4444', 35000.00     ,'2022-11-30'  , 012  );
+                 
+-- Mostre quantos clientes tem na agencia
+	SELECT count(*) qtdeCli FROM clientes;
+                 
+-- Mostre a soma dos saldos (total) dos clientes da agencia
+select sum(ContaSaldo) as sal_Total from clientes
+inner join contas
+on clientes.ClienteCodigo = contas.ClienteCodigo;
+
+-- Mostre o nome do cliente e o seu saldo convertida em dolar e euro.
+set @vEuro = 6.23;
+set @vDolar = 5.75;
+select ClienteNome, ContaSaldo, ContaSaldo/@vEuro as valDolar,
+ContaSaldo/@vEuro as valEuro
+from clientes inner join contas
+	on clientes.ClienteCodigo = contas.ClienteCodigo;
+				
+-- Mostre todos os clientes que não possuem br em seu e-mail.
+select ClienteNome, ClienteEmail from Clientes
+where ClienteEmail not like  '%br%';
+  
+--  Mostre todos os clientes em que o nome começa começa com R, mas não com Ri
+select clienteNome from clientes
+where clienteNome like 'R%' and ClienteNome not like 'Ri%';
+ 
+-- Mostre todos os nomes de clientes que o cartão de crédito tem limite menor que R$ 5000,00
+select ClienteNome from Clientes
+inner join contas 
+on clientes.ClienteCodigo = contas.ClienteCodigo
+inner join cartoes
+on contas.ContaNumero = cartoes.ContaNumero
+where cartoes.CartaoLimite < 5000;
+
+-- Utilizando o conceito de sub consulta, mostre quais clientes não possuem cartão de crédito.
+
+
+-- Mostre a média de idade  
+
+-- Mostre quais os clientes tem idade superior a média.
+
+  
+-- Utilizando o conceito de subconsulta, qual o saldo do cliente Rita Reis?
+  
+    
